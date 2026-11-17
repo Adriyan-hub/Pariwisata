@@ -1,0 +1,106 @@
+/* Gaya Kustom Tambahan */
+
+/* Animasi lembut untuk transisi umum */
+* {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Efek kustom untuk link navigasi aktif */
+.nav-link:hover {
+    color: #0d9488; /* Warna teal-600 */
+}
+
+/* Kustomisasi scrollbar modern */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ========================================================
+   TAMBAHAN TAMPILAN MODERN & ESTETIK
+   ======================================================== */
+
+/* Efek Halus pada Kartu Destinasi saat Disorot */
+#destinasi .group:hover {
+    transform: translateY(-8px);
+}
+
+/* Efek Glow / Bayangan Bercahaya Lembut pada Badge Rating */
+#destinasi .group .absolute.top-4 {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Efek Kategori Card saat Disorot / Diklik */
+#kategori .group:hover {
+    border-color: #0d9488;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -10px rgba(13, 148, 136, 0.15);
+}
+
+/* Perhalus Tampilan Jam Real-Time */
+#live-clock {
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+#live-clock:hover {
+    border-color: #0d9488;
+    background-color: rgba(20, 184, 166, 0.05);
+}
+
+/* Animasi Halus untuk Tombol Utama */
+section a[href="#destinasi"]:hover,
+section a[href="#beranda"]:hover {
+    box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.4);
+}
+
+/* Dekorasi Gradien Halus pada Background Seksi Tentang */
+#tentang {
+    background: radial-gradient(circle at 10% 20%, rgba(20, 184, 166, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 40%);
+}
+
+/* Animasi Muncul Modal Detail */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInScale 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Transisi Halus Saat Kartu Difilter Kategori */
+.destinasi-card {
+    animation: fadeInCard 0.4s ease-in-out;
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
